@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Love</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  overflow: hidden;
+}
+
+.container {
+  width: 360px;
+  padding: 35px;
+  border-radius: 25px;
+  background: rgba(255,255,255,0.3);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  z-index: 1;
+}
+
+h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 34px;
+  color: #a4133c;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #4a0d23;
+  font-weight: 600;
+}
+
+/* Floating hearts */
+.emoji-heart {
+  position: fixed;
+  bottom: -50px;
+  animation: floatUp 6s linear forwards;
+  pointer-events: none;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(0); opacity: 0; }
+  to { transform: translateY(-120vh); opacity: 1; }
+}
+
+/* Laptop view */
+@media (min-width: 1024px) {
+  .container {
+    width: 520px;
+    padding: 50px;
+  }
+
+  h1 {
+    font-size: 44px;
+  }
+
+  p {
+    font-size: 22px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>💖Happy Valentine’s Day💖</h1>
+  <p>
+    Love You Forever..! 
+    You’re Not Just Part of My Life
+    You’re My Whole World.<br>
+    You Are My Today,<br>
+    My Tomorrow,<br>
+    And My Always.
+  </p>
+</div>
+
+<audio autoplay loop>
+  <source src="hehe.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.className = "emoji-heart";
+  heart.innerHTML = "❤️","🧡","💛","💚","💙","💜","🖤","🤍","🤎";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = Math.random() * 20 + 18 + "px";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 6000);
+}, 400);
+</script>
+
+</body>
+</html>
